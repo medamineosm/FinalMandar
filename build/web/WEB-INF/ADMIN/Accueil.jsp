@@ -13,18 +13,18 @@
           
           <h3>Liste Preinscription <small>All</small></h3>
           
-          <table class="responsive dataTable dataTables_wrapper dt-foundation">
+          <table class="responsive dataTable">
             <tr>
-                <th>Numero</th>
-                <th>Date Inscription</th>
-                <th>Etat</th>
-                <th>CNE</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Institut</th>
-                <th>Filiere</th>
-                <th>Resultat</th>
-                <th>Actions</th>
+                <th><center>Numero</center></th>
+                <th><center>Date Inscription</center></th>
+                <th><center>Etat</center></th>
+                <th><center>CNE</center></th>
+                <th><center>Nom</center></th>
+                <th><center>Prenom</center></th>
+                <th><center>Institut</center></th>
+                <th><center>Filiere</center></th>
+                <th><center>Resultat</center></th>
+                <th width="250"><center>Actions</center></th>
             </tr>
             <% ArrayList<Inscription> l = Inscription.getAllInscription(); 
                 for(int i =0;i<l.size();i++)
@@ -40,21 +40,22 @@
                 <td><%= l.get(i).getInstitut().getNom() %></td>
                 <td><%= l.get(i).getFiliere().getLibelle() %></td>
                 <td><%= l.get(i).getResultat() %></td>
-                <td>
-                    <ul class="button-group round">
-                        <li><a href="<%=request.getContextPath()%>/validerPreinscriptionServet?id=<%= l.get(i).getNumero() %>" class="small button">
-                                <span class="<%=request.getContextPath()%>/img/images/fi-check.svg"></span>
+                <td><center>
+                    <ul class=" button-group round">
+                        <li ><a href="<%=request.getContextPath()%>/validerPreinscriptionServet?id=<%= l.get(i).getNumero() %>" class="small button">
+                                V
                             </a>
                         </li>
-                        <li><a href="<%=request.getContextPath()%>/validerPreinscriptionServet?id=<%= l.get(i).getNumero() %>" class="small button">
-                                <span class="<%=request.getContextPath()%>/img/images/fi-zoom-in.svg" ></span>
+                        <li ><a  href="<%=request.getContextPath()%>/ModifEtudiantServlet?id_etudiant=<%= l.get(i).getBac().getEtudiant().getCNE() %>" class="small button">
+                                M
                             </a>
                         </li>
-                        <li><a href="<%=request.getContextPath()%>/validerPreinscriptionServet?id=<%= l.get(i).getNumero() %>" class="small button">
-                                <span class="<%=request.getContextPath()%>/img/images/fi-minus.svg" ></span>
+                        <li ><a href="<%=request.getContextPath()%>/validerPreinscriptionServet?id=<%= l.get(i).getNumero() %>" class="small button">
+                                S
                             </a>
                         </li>
                     </ul>
+                    </center>
                 </td>
                 
                 

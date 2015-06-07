@@ -455,7 +455,6 @@
                     </div>
                 </div>
                 <Button class="btn btn-large btn-success">Validre</Button>
-                <a href="PDF" class="btn btn-large btn-danger">PDF</a>
             </form>    
         </form> 
 <%@include file="footer.jsp" %>

@@ -34,7 +34,7 @@ public class Inscription {
         this.resultat = resultat;
     }
     public Inscription(Date date_inscription, String etat_inscription, Bac bac, Institut institut, Filiere filiere, String resultat) {
-        this.numero = "DOS"+(lastNumero()+1);
+        this.numero = "DOS"+(+1);
         this.date_inscription = date_inscription;
         this.etat_inscription = etat_inscription;
         this.bac = bac;
@@ -138,7 +138,13 @@ public class Inscription {
                 ResultSet rss =  pss.executeQuery();
                 if(rss.next())
                 {
-                    return Integer.parseInt(rss.getString(1).substring(3));
+                    if(rss.getString(1).toUpperCase().equals("NULL")==true)
+                    {
+                        return 0;
+                    }else{
+                        return Integer.parseInt(rss.getString(1).substring(3));
+                    }
+                    
                 }else{
                     return -1;
                 }
@@ -238,4 +244,6 @@ public class Inscription {
                 return null;
             }
     }
+    
+
 }

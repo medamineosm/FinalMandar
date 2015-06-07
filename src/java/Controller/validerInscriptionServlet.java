@@ -147,6 +147,7 @@ public class validerInscriptionServlet extends HttpServlet {
                 
                 request.getSession().setAttribute("CurrentBac", bac);
                 request.getSession().setAttribute("CurrentInscription",insc);
+                
                 request.getRequestDispatcher("/WEB-INF/Accueil.jsp").forward(request, response);
             }else{
                 request.getRequestDispatcher("error.jsp").forward(request, response);

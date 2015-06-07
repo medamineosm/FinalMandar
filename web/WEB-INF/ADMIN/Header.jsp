@@ -56,9 +56,9 @@
       <img src="<%=request.getContextPath()%>/img/images/fi-graph-bar.svg" >
       <label>Statistique</label>
     </a>
-    <a class="item" href="<%=request.getContextPath()%>/ExcelServlet">
+    <a class="item" data-reveal-id="myModal" href="#">
       <img src="<%=request.getContextPath()%>/img/images/fi-upload.svg" >
       <label>Upload</label>
     </a>
  </div>
-</div>        
+</div>
